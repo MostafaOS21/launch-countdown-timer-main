@@ -1,0 +1,208 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Red Hat Text", sans-serif;
+  background-color: hsl(268deg, 21%, 14%);
+  position: relative;
+  height: 100vh;
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 100%);
+}
+body::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+}
+body::before {
+  top: 0;
+  background: url(../../images/bg-stars.svg);
+  z-index: -1;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  text-align: center;
+}
+#main h1 {
+  font-size: 26px;
+  margin-bottom: 90px;
+  letter-spacing: 8px;
+}
+@media (min-width: 360px) and (max-width: 1439px) {
+  #main h1 {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+}
+#main .rem-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  color: hsl(345deg, 95%, 68%);
+  font-weight: 700;
+  width: 55%;
+  height: 160px;
+}
+@media (min-width: 360px) and (max-width: 1439px) {
+  #main .rem-time {
+    width: 100%;
+  }
+}
+#main .rem-time div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+  height: 100%;
+  background-color: hsl(236deg, 21%, 26%);
+  width: calc((85% - 60px) / 4);
+  position: relative;
+}
+@media (min-width: 360px) and (max-width: 1439px) {
+  #main .rem-time div {
+    height: 75%;
+  }
+}
+#main .rem-time div span.ball {
+  position: absolute;
+  background-color: hsl(268deg, 21%, 14%);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -15px;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+#main .rem-time div span.ball.r-b {
+  left: unset;
+  right: -15px;
+}
+#main .rem-time div .val {
+  font-size: 70px;
+  width: 100%;
+}
+@media (min-width: 360px) and (max-width: 1439px) {
+  #main .rem-time div .val {
+    font-size: 30px;
+  }
+}
+#main .rem-time div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-color: hsl(236deg, 22%, 19%);
+  opacity: 0.2;
+  border-bottom: 2px solid hsl(268deg, 21%, 14%);
+}
+#main .rem-time div::after {
+  font-size: 14px;
+  content: attr(data-title);
+  position: absolute;
+  bottom: -38px;
+  color: hsl(244deg, 13%, 57%);
+  letter-spacing: 5px;
+}
+@media (min-width: 360px) and (max-width: 1439px) {
+  #main .rem-time div::after {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: 150px;
+  justify-self: flex-end;
+  background-image: url(images/pattern-hills.svg);
+}
+footer a {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+footer a:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.attribution {
+  padding: 15px 0;
+  background-color: hsl(268deg, 21%, 14%);
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+.attribution a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=main.css.map */

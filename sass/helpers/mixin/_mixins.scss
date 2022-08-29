@@ -1,0 +1,30 @@
+@mixin abs-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin ball($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mediaQuery($screen) {
+  @if ($screen == mobile) {
+    @media (min-width: 360px) and (max-width: 1439px) {
+      @content;
+    }
+  } @else {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+}

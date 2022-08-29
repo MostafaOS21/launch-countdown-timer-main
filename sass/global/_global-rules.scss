@@ -1,0 +1,30 @@
+@use "./sass/variables/variables" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Red Hat Text", sans-serif;
+  background-color: $backCol;
+  position: relative;
+  height: 100vh;
+  text-transform: uppercase;
+  color: $white;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+  }
+  &::before {
+    top: 0;
+    background: url(../../images/bg-stars.svg);
+    z-index: -1;
+  }
+}

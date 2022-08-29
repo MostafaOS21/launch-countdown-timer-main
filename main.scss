@@ -1,0 +1,139 @@
+// Global Rules
+@use "./sass/global/global-rules";
+
+//
+@use "./sass/variables/variables" as *;
+
+// Mixins
+@use "./sass/helpers/mixin/mixins" as *;
+
+// Functions
+
+@use "./sass/helpers/functions/functions";
+
+//////////////////
+//////////////////
+//////////////////
+// Body
+body {
+  @include flex-center;
+  flex-direction: column;
+}
+// Timer Design
+#main {
+  @include flex-center;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  text-align: center;
+  // Main Header
+  h1 {
+    font-size: 26px;
+    margin-bottom: 90px;
+    @include mediaQuery(mobile) {
+      font-size: 14px;
+      letter-spacing: $letterSpace - 5;
+    }
+    letter-spacing: $letterSpace;
+  }
+
+  // Timer
+  .rem-time {
+    @include flex-center;
+    gap: 30px;
+    color: $timeColor;
+    font-weight: $fontWeight;
+    width: 55%;
+    @include mediaQuery(mobile) {
+      width: 100%;
+    }
+    height: 160px;
+    div {
+      @include flex-center;
+      border-radius: 8px;
+      height: 100%;
+      @include mediaQuery(mobile) {
+        height: 75%;
+      }
+      background-color: $timerBack;
+      width: calc((85% - 60px) / 4);
+      position: relative;
+
+      span.ball {
+        position: absolute;
+        background-color: $backCol;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -15px;
+        z-index: 1;
+        @include ball(20px);
+        // @include mediaQuery(mobile) {
+        //   @include ball(18px);
+        // }
+      }
+      span.ball.r-b {
+        left: unset;
+        right: -15px;
+      }
+      .val {
+        font-size: 70px;
+        @include mediaQuery(mobile) {
+          font-size: 30px;
+        }
+        width: 100%;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 50%;
+        background-color: $timerTobCol;
+        opacity: 0.2;
+        border-bottom: 2px solid $backCol;
+      }
+
+      &::after {
+        font-size: 14px;
+        @include mediaQuery(mobile) {
+          font-size: 10px;
+          letter-spacing: 0;
+        }
+        content: attr(data-title);
+        position: absolute;
+        bottom: -38px;
+        color: $timerBadge;
+        letter-spacing: $letterSpace - 3;
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  @include flex-center;
+  gap: 30px;
+  width: 100%;
+  height: 150px;
+  justify-self: flex-end;
+  background-image: url(images/pattern-hills.svg);
+  a {
+    transition: transform 0.3s ease-in-out;
+  }
+  a:hover {
+    transform: translateY(-10px);
+  }
+}
+
+// Attribution
+
+.attribution {
+  padding: 15px 0;
+  background-color: $backCol;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  a {
+    text-decoration: none;
+  }
+}
